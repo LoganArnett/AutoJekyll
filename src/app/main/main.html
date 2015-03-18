@@ -11,23 +11,25 @@
     <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
   </div>
 
-  <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
-      <div class="thumbnail">
-        <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
-        <div class="caption">
-          <h3>{{awesomeThing.title}}</h3>
-          <p>{{awesomeThing.description}}</p>
-          <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <section id="new-post" class="col-xs-12 col-md-6">
+   <h2>New Post</h2>
 
-  <hr>
-
-  <div class="footer">
-    <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
-  </div>
+    <form ng-submit="new.gitPub(new.newPost)">
+        <label>Title</label>
+        <input type="text" ng-model="new.newPost.title" style="display:block;">
+<!--
+        <label>Image Route</label>
+        <input type="text" ng-model="new.newPost.img" style="display:block;">
+-->
+        <label>Write it Down!</label>
+        <textarea name="newPost" id="newPost" cols="30" rows="10" ng-model="new.newPost.content" style="display:block;"></textarea>
+        <button class="send" >Publish</button>
+    </form>
+    
+       
+</section>
+<section class="preview col-xs-12 col-md-6">
+    <md ng-model="new.newPost.content"></md>
+</section>
 
 </div>
