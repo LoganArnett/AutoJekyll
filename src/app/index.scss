@@ -11,6 +11,9 @@ $center: 0 auto;
     margin: 0;
     padding: 0;
 }
+h1 {
+    margin-top: 0;
+}
 .main {
     padding-bottom: 4%;
 }
@@ -84,5 +87,15 @@ $center: 0 auto;
     color: deepskyblue;
     text-decoration: none;
 }
+.description, .main-para {
+    width: 80%; 
+    margin: $center;
+    padding: 1% 0;
+    
+      h2 {
+          text-align: center;
+      }
+}
+
 // injector
 // endinjector

@@ -10,7 +10,13 @@ angular.module('autoJekyll', ['ngAnimate', 'ngSanitize', 'restangular', 'ui.rout
         url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl as app'
+      })
+      .state('newpost', {
+        url: '/new',
+        templateUrl: 'app/newpost/newpost.html',
+        controller: 'MainCtrl as app'
       });
+    
 
     $urlRouterProvider.otherwise('/');
   })
