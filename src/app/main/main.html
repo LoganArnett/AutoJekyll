@@ -16,13 +16,13 @@
    <h2>New Post</h2>
     <form ng-submit="app.gitPub(app.newPost)">
         <label>Post Date(ex. 2015-03-17)</label>
-        <input type="text" ng-model="app.newPost.postDate"></br>
+        <input type="text" ng-model="app.newPost.postDate" required></br>
         <label>Post Title</label>
-        <input type="text" ng-model="app.newPost.fileName"></br>
+        <input type="text" ng-model="app.newPost.fileName" required></br>
         <label>Commit Message</label>
-        <input type="text" ng-model="app.newPost.cMessage"></br>
+        <input type="text" ng-model="app.newPost.cMessage" required></br>
         <label>Write it Down!</label>
-        <textarea name="newPost" id="newPost" ng-model="app.newPost.content" style="display:block;"></textarea>
+        <textarea name="newPost" id="newPost" ng-model="app.newPost.content" style="display:block;" required></textarea>
         <button class="send" >Publish</button>
     </form>
     </div>
