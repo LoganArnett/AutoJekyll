@@ -2,28 +2,54 @@
 
   <div ng-include="'components/navbar/navbar.html'"></div>
 
-  <div class="jumbotron text-center">
+<!--
+  <header class="text-center">
     <h1>AutoJekyll</h1>
     <p class="lead">
       <img class="logo" src="assets/images/MeSP.jpg" alt="AutoJekyll"><br>
       Automate your Jekyll Workflow
     </p>
-  </div>
+  </header>
+-->
 
   <section id="addPost" class="col-xs-12 col-md-6">
    
    <div id="Post">
    <h2>New Post</h2>
     <form ng-submit="app.gitPub(app.newPost)">
-        <label>Post Date(ex. 2015-03-17)</label>
-        <input type="text" ng-model="app.newPost.postDate" required></br>
-        <label>Post Title</label>
-        <input type="text" ng-model="app.newPost.fileName" required></br>
-        <label>Commit Message</label>
-        <input type="text" ng-model="app.newPost.cMessage" required></br>
-        <label>Write it Down!</label>
-        <textarea name="newPost" id="newPost" ng-model="app.newPost.content" style="display:block;" required></textarea>
-        <button class="send" >Publish</button>
+       <div class="col-xs-4">
+          <label>Year</label>
+           <select ng-model="app.newPost.year">
+               <option>2015</option>
+           </select>
+       </div>
+       <div class="col-xs-4">
+          <label>Month</label>
+           <select ng-model="app.newPost.month">
+               <option ng-repeat="num in app.getNumber(app.month) track by $index">{{$index+1}}</option>
+           </select>
+       </div>
+       <div class="col-xs-4">
+          <label>Day</label>
+           <select ng-model="app.newPost.day">
+               <option ng-repeat="num in app.getNumber(app.day) track by $index">{{$index+1}}</option>
+           </select>
+        </div></br>
+        <div class="post-title">
+            <label>Post Title</label></br>
+            <input type="text" ng-model="app.newPost.fileName" required></br>
+        </div>
+        <div class="commit-message">
+            <label>Commit Message</label></br>
+            <input type="text" ng-model="app.newPost.cMessage" required></br>
+        </div>
+        <div class="post-content">
+            <label>Write it Down!</label></br>
+            <textarea name="newPost" id="newPost" ng-model="app.newPost.content" style="display:block;" required></textarea>
+        </div>
+        <div class="publish-btn col-xs-12">
+            <button class="send btn btn-primary btn-lg">Publish</button>
+        </div>
     </form>
     </div>
     
