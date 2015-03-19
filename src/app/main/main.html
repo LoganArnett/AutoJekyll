@@ -1,32 +1,38 @@
-<div class="container">
+<div class="container-fluid">
 
   <div ng-include="'components/navbar/navbar.html'"></div>
 
   <div class="jumbotron text-center">
     <h1>AutoJekyll</h1>
     <p class="lead">
-      <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+      <img class="logo" src="assets/images/MeSP.jpg" alt="AutoJekyll"><br>
       Automate your Jekyll Workflow
     </p>
   </div>
 
-  <section id="new-post" class="col-xs-12 col-md-6">
+  <section id="addPost" class="col-xs-12 col-md-6">
+   
+   <div id="Post">
    <h2>New Post</h2>
-
     <form ng-submit="app.gitPub(app.newPost)">
-<!--
-        <label>Image Route</label>
-        <input type="text" ng-model="new.newPost.img" style="display:block;">
--->
+        <label>Post Date(ex. 2015-03-17)</label>
+        <input type="text" ng-model="app.newPost.postDate"></br>
+        <label>Post Title</label>
+        <input type="text" ng-model="app.newPost.fileName"></br>
+        <label>Commit Message</label>
+        <input type="text" ng-model="app.newPost.cMessage"></br>
         <label>Write it Down!</label>
-        <textarea name="newPost" id="newPost" cols="30" rows="10" ng-model="app.newPost" style="display:block;"></textarea>
+        <textarea name="newPost" id="newPost" ng-model="app.newPost.content" style="display:block;"></textarea>
         <button class="send" >Publish</button>
     </form>
+    </div>
     
        
 </section>
 <section class="preview col-xs-12 col-md-6">
-    <md ng-model="app.newPost"></md>
+   <div id="markdown">
+    <md ng-model="app.newPost.content"></md>
+    </div>
 </section>
 
 </div>
