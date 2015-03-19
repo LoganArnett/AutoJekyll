@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid main">
 
   <div ng-include="'components/navbar/navbar.html'"></div>
 
@@ -17,6 +17,7 @@
    <div id="Post">
    <h2>New Post</h2>
     <form ng-submit="app.gitPub(app.newPost)">
+      <section class="date-fields row">
        <div class="col-xs-4">
           <label>Year</label>
            <select ng-model="app.newPost.year">
@@ -34,18 +35,19 @@
            <select ng-model="app.newPost.day">
                <option ng-repeat="num in app.getNumber(app.day) track by $index">{{$index+1}}</option>
            </select>
-        </div></br>
-        <div class="post-title">
+          </div></br></br>
+        </section>
+        <div class="post-title col-xs-12">
             <label>Post Title</label></br>
             <input type="text" ng-model="app.newPost.fileName" required></br>
         </div>
-        <div class="commit-message">
+        <div class="commit-message col-xs-12">
             <label>Commit Message</label></br>
             <input type="text" ng-model="app.newPost.cMessage" required></br>
-        </div>
+        </div></br>
         <div class="post-content">
-            <label>Write it Down!</label></br>
-            <textarea name="newPost" id="newPost" ng-model="app.newPost.content" style="display:block;" required></textarea>
+            <label>Blog It in <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a></label></br>
+            <textarea name="newPost" id="newPost" wrap="off" ng-model="app.newPost.content" style="display:block;" required></textarea>
         </div>
         <div class="publish-btn col-xs-12">
             <button class="send btn btn-primary btn-lg">Publish</button>
@@ -56,6 +58,7 @@
        
 </section>
 <section class="preview col-xs-12 col-md-6">
+  <h2>Live Preview of Markdown</h2>
    <div id="markdown">
     <md ng-model="app.newPost.content"></md>
     </div>
