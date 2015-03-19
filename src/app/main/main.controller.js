@@ -25,7 +25,7 @@ angular.module('autoJekyll')
       this.encoded = $base64.encode(post.content)
       console.log(self.postIt)
       
-//      Restangular.one('_posts/').customPUT( {"content": this.encoded, "message": this.cMessage}, this.datedFile, {}, {"Authorization": 'token 6c5e78e3ac7a7571b0f1f32d07034a97434b8b88'} )
+      Restangular.one('_posts/').customPUT( {"content": this.encoded, "message": this.cMessage}, this.datedFile, {}, {"Authorization": 'token 6c5e78e3ac7a7571b0f1f32d07034a97434b8b88'} )
       
       return this.newPost = {
         fileName: '',
